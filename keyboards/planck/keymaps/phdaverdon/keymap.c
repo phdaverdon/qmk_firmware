@@ -40,13 +40,13 @@ enum planck_keycodes {
 #define _HYP    ALL_T(KC_NO)
 #define LOWER   LT(_LOWER,KC_DOWN)
 #define RAISE   LT(_RAISE, KC_LEFT)
-#define ALTGR   MT(KC_RALT,KC_RIGHT)
+#define ALTGR   MT(MOD_RALT,KC_RIGHT)
 #define RIGESC  LT(_RIGHT, KC_ESC)
 
-#define KC_PC_UNDO LCTL(KC_Z)
-#define KC_PC_CUT LCTL(KC_X)
-#define KC_PC_COPY LCTL(KC_C)
-#define KC_PC_PASTE LCTL(KC_V)
+#define BP_PC_UNDO LCTL(BP_Z)
+#define BP_PC_CUT LCTL(BP_X)
+#define BP_PC_COPY LCTL(BP_C)
+#define BP_PC_PASTE LCTL(BP_V)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -56,70 +56,70 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |RigEsc|   A  |   U  |   I  |   E  |   ,  |   C  |   T  |   S  |   R  |   N  |   M  |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * | Shift|   À  |   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  | Shift|
+ * | Shift|   À  |   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  | Entr |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac|Entr|RAISE/Left|AltG/Right|Bksp|W|  Ç  |
+ * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac    |RAISE/Left|AltG/Right|Bksp|W|  Ç  |
  * `-----------------------------------------------------------------------------------'
  */
 [_BEPO] = LAYOUT_planck_grid(
     KC_TAB,  BP_B,       BP_E_ACUTE, BP_P,    BP_O,    BP_E_GRAVE, BP_DCRC,  BP_V,  BP_D,    BP_L, BP_J,    BP_Z,
     RIGESC,  BP_A,       BP_U,       BP_I,    BP_E,    BP_COMMA,   BP_C,     BP_T,  BP_S,    BP_R, BP_N,    BP_M,
-    KC_LSFT, BP_A_GRAVE, BP_Y,       BP_X,    BP_DOT,  BP_K,       BP_APOS,  BP_Q,  BP_G,    BP_H, BP_F,    KC_RSFT,
-    KC_LCTL, KC_LGUI, KC_LALT,   _MEH    , LOWER,   KC_SPC,     KC_ENTER, RAISE, ALTGR, KC_BSPC, BP_W, BP_CCED
+    KC_LSFT, BP_A_GRAVE, BP_Y,       BP_X,    BP_DOT,  BP_K,       BP_APOS,  BP_Q,  BP_G,    BP_H, BP_F,    KC_ENTER,
+    KC_LCTL, KC_LGUI, KC_LALT,   _MEH    , LOWER,   KC_SPC,     KC_SPC, RAISE, ALTGR, KC_BSPC, BP_W, BP_CCED
 ),
 
 /* RIGHT
      * ,-----------------------------------------------------------------------------------.
-     * |      |      |      |      |      |      |  7   |   8  |   9  |  Ins |  Home| Pg Up|
+     * |  Tab |      |      |      |      |      |  7   |   8  |   9  |  Ins |  Home| Pg Up|
      * |------+------+------+------+------+-------------+------+------+------+------+------|
-     * |      |      |      |      |      |      |  4   |   5  |   6  |  Del |  End | Pg Dn|
+     * |RigEsc|      |      |      |      |      |  4   |   5  |   6  |  Del |  End | Pg Dn|
      * |------+------+------+------+------+------|------+------+------+------+------+------|
-     * |      |      |      |      |      |      |  1   |   2  |   3  |      |  Up  |      |
+     * | Shift|      |      |      |      |      |  1   |   2  |   3  |      |  Up  | Entr |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac|0   |   .  |      |  Left|  Down| Right|
+     * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac     |  0   |   .  |  Left|  Down| Right|
      * `-----------------------------------------------------------------------------------'     
      */
     [_RIGHT] = LAYOUT_planck_grid(
-        XXX, XXX, XXX, XXX, XXX, XXX, LSFT(BP_PLUS), LSFT(BP_MINUS), LSFT(BP_SLASH), KC_INS, KC_HOME, KC_PGUP,
+        ___, XXX, XXX, XXX, XXX, XXX, LSFT(BP_PLUS), LSFT(BP_MINUS), LSFT(BP_SLASH), KC_INS, KC_HOME, KC_PGUP,
         ___, XXX, XXX, XXX, XXX, XXX, LSFT(BP_LPRN), LSFT(BP_RPRN),  LSFT(BP_AT),    KC_DEL, KC_END, KC_PGDN,
-        XXX, XXX, XXX, XXX, XXX, XXX, LSFT(BP_DQOT), LSFT(BP_LGIL),  LSFT(BP_RGIL),  XXX, KC_UP, XXX,
-        ___, ___, ___, ___, ___, ___, LSFT(BP_ASTR), BP_DOT       ,           XXX, KC_LEFT,  KC_DOWN, KC_RIGHT
+        ___, XXX, XXX, XXX, XXX, XXX, LSFT(BP_DQOT), LSFT(BP_LGIL),  LSFT(BP_RGIL),  XXX, KC_UP, ___,
+        ___, ___, ___, ___, ___, ___, ___,LSFT(BP_ASTR), BP_DOT       ,           KC_LEFT,  KC_DOWN, KC_RIGHT
     ),
 
-/* Lower  / garder une combinaison backspace
+/* Lower  
  * ,-----------------------------------------------------------------------------------.
- * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |
+ * | Tab  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F11 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |RigEsc|   1  |  2   |  3   |   4  |  5   |  6   |   7  |  8   |   9  |   0  |  F12 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |  Undo|   Cut| Copy | Paste|      |      |      |      |      |      |      |
+ * | Shift|  Undo|   Cut| Copy | Paste|  .   |  ,   |   +  |   -  |   /  |   *  |  Entr    |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac|Entr|RAISE/Left|AltG/Right|Vol-| Vol+ | Play |
+ * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac     |RAISE/Left|AltG/Right|Vol-| Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
-    KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,   KC_F6, KC_F7, KC_F8,   KC_F9,   KC_F10, KC_F11,   KC_F12,
-     XXX,   XXX,   XXX,   XXX,   XXX,     XXX,   XXX,   XXX,     XXX,     XXX,    XXX,      XXX,
-     XXX,   KC_PC_UNDO,   KC_PC_CUT,   KC_PC_COPY,   KC_PC_PASTE,     XXX,   XXX,   XXX,     XXX,     XXX,    XXX,      XXX,
+    ___, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,   KC_F6, KC_F7, KC_F8,   KC_F9,   KC_F10, KC_F11,   
+     ___,   LSFT(BP_DQOT), LSFT(BP_LGIL),  LSFT(BP_RGIL),   LSFT(BP_LPRN), LSFT(BP_RPRN),  LSFT(BP_AT),   LSFT(BP_PLUS), LSFT(BP_MINUS), LSFT(BP_SLASH),    LSFT(BP_ASTR) ,     KC_F12,
+     ___,   BP_PC_UNDO,   BP_PC_CUT,   BP_PC_COPY,   BP_PC_PASTE,     BP_DOT,   BP_COMMA,   BP_PLUS, BP_MINUS, BP_SLASH,  BP_ASTR,      ___,
     ___, ___, ___, ___, ___,       ___,   ___,     ___,    ___,    KC_VOLD, KC_VOLU, KC_MPLY
 ),
 
-/* Raise décaler le haut et mettre le sharp
+/* Raise
   * ,-----------------------------------------------------------------------------------.
   * |  #   |   "  |  «   |  »   |  (   |   )  |   @  |   +  |   -  |   /  |   *  |   =  |
   * |------+------+------+------+------+-------------+------+------+------+------+------|
-  * | Esc  |  <   |  >   |  {   |   }  |      |   Ç  |      |   $  |      |      |  %    |
+  * | Esc  |  $   |  <   |  >   |  [   |   ]  |      |      |      |      |      |  %   |
   * |------+------+------+------+------+------|------+------+------+------+------+------|
-  * |Shift |      |      |  [   |   ]  |      |      |      |      |      |      |      |
+  * |Shift |      |  {   |   }  |      |      |      |      |      |      |      |  Entr    |
   * |------+------+------+------+------+------+------+------+------+------+------+------|
-  * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|_|Entr|RAISE/Left|AltG/Right|Vol-|Vol+|Play |
+  * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac     |RAISE/Left|AltG/Right|Vol-|Vol+|Play |
   * `-----------------------------------------------------------------------------------'
   */
 [_RAISE] = LAYOUT_planck_grid(
     BP_HASH,BP_DQOT, BP_LGIL,       BP_RGIL,       BP_LPRN,       BP_RPRN,       BP_AT,          BP_PLUS, BP_MINUS, BP_SLASH,  BP_ASTR, BP_EQUAL,
-    ___,     RALT(BP_LGIL), RALT(BP_RGIL), RALT(BP_Y),    RALT(BP_X),    XXX,            BP_CCED, XXX,      BP_DOLLAR, XXX,     XXX,      BP_PERCENT,
-    ___,     XXX,           XXX,           RALT(BP_LPRN), RALT(BP_RPRN), XXX,            XXX,     XXX,      XXX,       XXX,     XXX,      XXX,
-    ___,     ___,           ___,           ___,           ___,       RALT(KC_SPC),   ___,     ___,    ___,   KC_VOLD, KC_VOLU,  KC_MPLY
+    ___,     BP_DOLLAR, RALT(BP_LGIL), RALT(BP_RGIL), RALT(BP_LPRN), RALT(BP_RPRN),                XXX, XXX,     XXX,  XXX,     XXX,      BP_PERCENT,
+    ___,     XXX,           RALT(BP_Y),    RALT(BP_X),  XXX,          XXX,            XXX,     XXX,      XXX,       XXX,     XXX,      ___,
+    ___,     ___,           ___,           ___,           ___,       ___,   ___,     ___,    ___,   KC_VOLD, KC_VOLU,  KC_MPLY
 ),
 
 /* Adjust (Lower + Raise)
@@ -145,7 +145,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-  return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
+    return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -162,14 +162,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         #ifdef BACKLIGHT_ENABLE
           backlight_step();
         #endif
-        #ifdef KEYBOARD_planck_rev5
-          writePinLow(E6);
-        #endif
       } else {
         unregister_code(KC_RSFT);
-        #ifdef KEYBOARD_planck_rev5
-          writePinHigh(E6);
-        #endif
       }
       return false;
       break;   
