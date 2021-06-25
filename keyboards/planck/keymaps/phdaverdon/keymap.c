@@ -42,6 +42,8 @@ enum planck_keycodes {
 #define RAISE   LT(_RAISE, KC_LEFT)
 #define ALTGR   MT(MOD_RALT,KC_RIGHT)
 #define RIGESC  LT(_RIGHT, KC_ESC)
+#define SHIFTENTER   MT(MOD_RSFT,KC_ENTER)
+
 
 #define BP_PC_UNDO LCTL(BP_Z)
 #define BP_PC_CUT LCTL(BP_X)
@@ -56,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |RigEsc|   A  |   U  |   I  |   E  |   ,  |   C  |   T  |   S  |   R  |   N  |   M  |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * | Shift|   À  |   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  | Entr |
+ * | Shift|   À  |   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  | Shift/Entr |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac    |RAISE/Left|AltG/Right|Bksp|W|  Ç  |
  * `-----------------------------------------------------------------------------------'
@@ -64,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BEPO] = LAYOUT_planck_grid(
     KC_TAB,  BP_B,       BP_E_ACUTE, BP_P,    BP_O,    BP_E_GRAVE, BP_DCRC,  BP_V,  BP_D,    BP_L, BP_J,    BP_Z,
     RIGESC,  BP_A,       BP_U,       BP_I,    BP_E,    BP_COMMA,   BP_C,     BP_T,  BP_S,    BP_R, BP_N,    BP_M,
-    KC_LSFT, BP_A_GRAVE, BP_Y,       BP_X,    BP_DOT,  BP_K,       BP_APOS,  BP_Q,  BP_G,    BP_H, BP_F,    KC_ENTER,
+    KC_LSFT, BP_A_GRAVE, BP_Y,       BP_X,    BP_DOT,  BP_K,       BP_APOS,  BP_Q,  BP_G,    BP_H, BP_F,    SHIFTENTER,
     KC_LCTL, KC_LGUI, KC_LALT,   _MEH    , LOWER,   KC_SPC,     KC_SPC, RAISE, ALTGR, KC_BSPC, BP_W, BP_CCED
 ),
 
@@ -74,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+-------------+------+------+------+------+------|
      * |RigEsc|      |      |      |      |      |  4   |   5  |   6  |  Del |  End | Pg Dn|
      * |------+------+------+------+------+------|------+------+------+------+------+------|
-     * | Shift|      |      |      |      |      |  1   |   2  |   3  |      |  Up  | Entr |
+     * | Shift|      |      |      |      |      |  1   |   2  |   3  |      |  Up  | Shift/Entr |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
      * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac     |  0   |   .  |  Left|  Down| Right|
      * `-----------------------------------------------------------------------------------'     
@@ -92,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |RigEsc|   1  |  2   |  3   |   4  |  5   |  6   |   7  |  8   |   9  |   0  |  F12 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|  Undo|   Cut| Copy | Paste|  .   |  ,   |   +  |   -  |   /  |   *  |  Entr    |
+ * | Shift|  Undo|   Cut| Copy | Paste|  .   |  ,   |   +  |   -  |   /  |   *  |  Shift/Entr    |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac     |RAISE/Left|AltG/Right|Vol-| Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
@@ -110,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * |------+------+------+------+------+-------------+------+------+------+------+------|
   * | Esc  |  $   |  <   |  >   |  [   |   ]  |      |      |      |      |      |  %   |
   * |------+------+------+------+------+------|------+------+------+------+------+------|
-  * |Shift |      |  {   |   }  |      |      |      |      |      |      |      |  Entr    |
+  * |Shift |      |  {   |   }  |      |      |      |      |      |      |      |  Shift/Entr    |
   * |------+------+------+------+------+------+------+------+------+------+------+------|
   * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac     |RAISE/Left|AltG/Right|Vol-|Vol+|Play |
   * `-----------------------------------------------------------------------------------'
@@ -136,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] = LAYOUT_planck_grid(
     _______, RESET,   DEBUG,   RGB_TOG, RGB_MODE_FORWARD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, KC_DEL ,
-    _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______,  _______,  BEPO,  _______,  _______,
+    _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______,  _______,  BEPO,  _______,  RGB_MODE_KNIGHT,
     _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  TERM_ON, TERM_OFF, _______, _______, BACKLIT,
     _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, ___
 )
