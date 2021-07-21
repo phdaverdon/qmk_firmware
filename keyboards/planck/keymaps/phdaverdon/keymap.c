@@ -78,14 +78,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|------+------+------+------+------+------|
      * | Shift|      |      |      |      |      |  1   |   2  |   3  |      |  Up  | Shift/Entr |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac     |  0   |   .  |  Left|  Down| Right|
+     * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac     |  0   |   ,  |  Left|  Down| Right|
      * `-----------------------------------------------------------------------------------'     
      */
     [_RIGHT] = LAYOUT_planck_grid(
         ___, XXX, XXX, XXX, XXX, XXX, LSFT(BP_PLUS), LSFT(BP_MINUS), LSFT(BP_SLASH), KC_INS, KC_HOME, KC_PGUP,
         ___, XXX, XXX, XXX, XXX, XXX, LSFT(BP_LPRN), LSFT(BP_RPRN),  LSFT(BP_AT),    KC_DEL, KC_END, KC_PGDN,
         ___, XXX, XXX, XXX, XXX, XXX, LSFT(BP_DQOT), LSFT(BP_LGIL),  LSFT(BP_RGIL),  XXX, KC_UP, ___,
-        ___, ___, ___, ___, ___, ___, ___,LSFT(BP_ASTR), BP_DOT       ,           KC_LEFT,  KC_DOWN, KC_RIGHT
+        ___, ___, ___, ___, ___, ___, ___,LSFT(BP_ASTR), BP_COMMA ,  KC_LEFT,  KC_DOWN, KC_RIGHT
     ),
 
 /* Lower  
