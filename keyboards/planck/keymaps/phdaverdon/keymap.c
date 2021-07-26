@@ -94,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |RigEsc|   1  |  2   |  3   |   4  |  5   |  6   |   7  |  8   |   9  |   0  |  F12 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|  Undo|   Cut| Copy | Paste|  .   |  ,   |   +  |   -  |   /  |   *  |  Shift/Entr    |
+ * | Undo |   Cut| Copy | Paste|  .   |  ,   |      |   +  |   -  |   /  |   *  |  Shift/Entr    |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac     |RAISE/Left|AltG/Right|Vol-| Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT_planck_grid(
     ___, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,   KC_F6, KC_F7, KC_F8,   KC_F9,   KC_F10, KC_F11,   
      ___,   LSFT(BP_DQOT), LSFT(BP_LGIL),  LSFT(BP_RGIL),   LSFT(BP_LPRN), LSFT(BP_RPRN),  LSFT(BP_AT),   LSFT(BP_PLUS), LSFT(BP_MINUS), LSFT(BP_SLASH),    LSFT(BP_ASTR) ,     KC_F12,
-     ___,   BP_PC_UNDO,   BP_PC_CUT,   BP_PC_COPY,   BP_PC_PASTE,     BP_DOT,   BP_COMMA,   BP_PLUS, BP_MINUS, BP_SLASH,  BP_ASTR,      ___,
+     BP_PC_UNDO,   BP_PC_CUT,   BP_PC_COPY,   BP_PC_PASTE,     BP_DOT,   BP_COMMA, XXX ,  BP_PLUS, BP_MINUS, BP_SLASH,  BP_ASTR,      ___,
     ___, ___, ___, ___, ___,       ___,   ___,     ___,    ___,    KC_VOLD, KC_VOLU, KC_MPLY
 ),
 
