@@ -43,6 +43,7 @@ enum planck_keycodes {
 #define ALTGR   MT(MOD_RALT,KC_RIGHT)
 #define RIGESC  LT(_RIGHT, KC_ESC)
 #define SHIFTENTER   MT(MOD_RSFT,KC_ENTER)
+#define SHIFTUP   MT(KC_LSFT,KC_UP)
 
 
 #define BP_PC_UNDO LCTL(BP_Z)
@@ -67,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  BP_B,       BP_E_ACUTE, BP_P,    BP_O,    BP_E_GRAVE, BP_DCRC,  BP_V,  BP_D,    BP_L, BP_J,    BP_Z,
     RIGESC,  BP_A,       BP_U,       BP_I,    BP_E,    BP_COMMA,   BP_C,     BP_T,  BP_S,    BP_R, BP_N,    BP_M,
     KC_LSFT, BP_A_GRAVE, BP_Y,       BP_X,    BP_DOT,  BP_K,       BP_APOS,  BP_Q,  BP_G,    BP_H, BP_F,    SHIFTENTER,
-    KC_LCTL, KC_LGUI, KC_LALT,   _MEH    , LOWER,   KC_SPC,     KC_SPC, RAISE, ALTGR, KC_BSPC, BP_W, BP_CCED
+    KC_LCTL, KC_LGUI, KC_LALT,   SHIFTUP , LOWER,   KC_SPC,     KC_SPC, RAISE, ALTGR, KC_BSPC, BP_W, BP_CCED
 ),
 
 /* RIGHT
