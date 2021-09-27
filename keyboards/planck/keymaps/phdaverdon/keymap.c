@@ -43,7 +43,7 @@ enum planck_keycodes {
 #define ALTGR   MT(MOD_RALT,KC_RIGHT)
 #define RIGESC  LT(_RIGHT, KC_ESC)
 #define SHIFTENTER   MT(MOD_RSFT,KC_ENTER)
-#define SHIFTUP   MT(KC_LSFT,KC_UP)
+#define SHIFTUP   MT(MOD_LSFT,KC_UP)
 
 
 #define BP_PC_UNDO LCTL(BP_Z)
@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift|   À  |   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  | Shift/Entr |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac    |RAISE/Left|AltG/Right|Bksp|W|  Ç  |
+ * | Ctrl | GUI  |  Alt |SHIFT/UP|LOWER/Down|Spac    |RAISE/Left|AltG/Right|Bksp|W|  Ç  |
  * `-----------------------------------------------------------------------------------'
  */
 [_BEPO] = LAYOUT_planck_grid(
@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|------+------+------+------+------+------|
      * | Shift|      |      |      |      |      |  1   |   2  |   3  |      |  Up  | Shift/Entr |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac     |  0   |   ,  |  Left|  Down| Right|
+     * | Ctrl | GUI  |  Alt |SHIFT/UP|LOWER/Down|Spac     |  0   |   ,  |  Left|  Down| Right|
      * `-----------------------------------------------------------------------------------'     
      */
     [_RIGHT] = LAYOUT_planck_grid(
@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|  Undo|   Cut| Copy | Paste|  ,   |  .   |   +  |   -  |   /  |   *  |  Shift/Entr    |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac     |RAISE/Left|AltG/Right|Vol-| Vol+ | Play |
+ * | Ctrl | GUI  |  Alt |SHIFT/UP|LOWER/Down|Spac     |RAISE/Left|AltG/Right|Vol-| Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
@@ -115,7 +115,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * |------+------+------+------+------+------|------+------+------+------+------+------|
   * |Shift |      |  {   |   }  |      |      |      |      |      |      |      |  Shift/Entr    |
   * |------+------+------+------+------+------+------+------+------+------+------+------|
-  * | Ctrl | GUI  |  Alt |MEH/UP|LOWER/Down|Spac     |RAISE/Left|AltG/Right|Vol-|Vol+|Play |
+  * | Ctrl | GUI  |  Alt |SHIFT/UP|LOWER/Down|Spac     |RAISE/Left|AltG/Right|Vol-|Vol+|Play |
   * `-----------------------------------------------------------------------------------'
   */
 [_RAISE] = LAYOUT_planck_grid(
