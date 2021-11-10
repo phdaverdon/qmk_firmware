@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ___, XXX, XXX, XXX, XXX, XXX, LSFT(BP_PLUS), LSFT(BP_MINUS), LSFT(BP_SLASH), KC_INS, KC_HOME, KC_PGUP,
         ___, XXX, XXX, XXX, XXX, XXX, LSFT(BP_LPRN), LSFT(BP_RPRN),  LSFT(BP_AT),    KC_DEL, KC_END, KC_PGDN,
         ___, XXX, XXX, XXX, XXX, XXX, LSFT(BP_DQOT), LSFT(BP_LGIL),  LSFT(BP_RGIL),  XXX, KC_UP, ___,
-        ___, ___, ___, ___, ___, LSFT(KC_MINUS), LSFT(KC_MINUS),LSFT(BP_ASTR), BP_COMMA ,  KC_LEFT,  KC_DOWN, KC_RIGHT
+        ___, ___, ___, ___, ___, RALT(KC_SPC), RALT(KC_SPC),LSFT(BP_ASTR), BP_COMMA ,  KC_LEFT,  KC_DOWN, KC_RIGHT
     ),
 
 /* Lower  
@@ -122,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     BP_HASH,BP_DQOT, BP_LGIL,       BP_RGIL,       BP_LPRN,       BP_RPRN,       BP_AT,          BP_PLUS, BP_MINUS, BP_SLASH,  BP_ASTR, BP_EQUAL,
     ___,     BP_DOLLAR, RALT(BP_LGIL), RALT(BP_RGIL), RALT(BP_LPRN), RALT(BP_RPRN),                XXX, KC_INS, KC_HOME, KC_PGUP,     XXX,      BP_PERCENT,
     ___,     XXX,           RALT(BP_Y),    RALT(BP_X),  XXX,          XXX,            XXX,    KC_DEL, KC_END, KC_PGDN,     XXX,      ___,
-    ___,     ___,           ___,           ___,           ___,       LSFT(KC_MINUS), LSFT(KC_MINUS),     ___,    ___,   KC_VOLD, KC_VOLU,  KC_MPLY
+    ___,     ___,           ___,           ___,           ___,       RALT(KC_SPC), RALT(KC_SPC),     ___,    ___,   KC_VOLD, KC_VOLU,  KC_MPLY
 ),
 
 /* Adjust (Lower + Raise)
