@@ -38,11 +38,11 @@ enum planck_keycodes {
 
 #define _MEH    MEH_T(KC_UP)
 #define _HYP    ALL_T(KC_NO)
-#define LOWER   LT(_LOWER,KC_DOWN)
-#define RAISE   LT(_RAISE, BP_W)
-#define ALTGR   MT(MOD_RALT,BP_CCED)
+#define LOWER   LT(_LOWER,BP_CCED)
+#define RAISE   LT(_RAISE, KC_LEFT)
+#define ALTGR   MT(MOD_RALT,KC_DOWN)
 #define SHIFTENTER   MT(MOD_RSFT,KC_ENTER)
-#define SHIFTUP   MT(MOD_LSFT,KC_UP)
+#define SHIFTSPACE   MT(MOD_LSFT,KC_SPC)
 
 
 #define BP_PC_UNDO LCTL(BP_Z)
@@ -60,14 +60,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift|   À  |   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  | Shift/Entr |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | GUI  |  Alt |SHIFT/UP|LOWER/Down |Spac  | RAISE/W|AltG/Ç|Bksp| Left | Right|
+ * | Ctrl | GUI  |  Alt |W     |LOWER/Ç |SHIFT/Space  | RAISE/Left|AltG/Down|Up| Right | Bksp|
  * `-----------------------------------------------------------------------------------'
  */
 [_BEPO] = LAYOUT_planck_grid(
     KC_TAB,  BP_B,       BP_E_ACUTE, BP_P,    BP_O,    BP_E_GRAVE, BP_DCRC,  BP_V,  BP_D,    BP_L, BP_J,    BP_Z,
     KC_ESC,  BP_A,       BP_U,       BP_I,    BP_E,    BP_COMMA,   BP_C,     BP_T,  BP_S,    BP_R, BP_N,    BP_M,
     KC_LSFT, BP_A_GRAVE, BP_Y,       BP_X,    BP_DOT,  BP_K,       BP_APOS,  BP_Q,  BP_G,    BP_H, BP_F,    SHIFTENTER,
-    KC_LCTL, KC_LGUI, KC_LALT,   SHIFTUP , LOWER,   KC_SPC,     KC_SPC, RAISE, ALTGR, KC_BSPC, KC_LEFT, KC_RIGHT,
+    KC_LCTL, KC_LGUI, KC_LALT,   BP_W , LOWER,   SHIFTSPACE,     SHIFTSPACE, RAISE, ALTGR, KC_UP, KC_RIGHT, KC_BSPC
 ),
 
 /* Lower  
@@ -78,14 +78,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|  Undo|   Cut| Copy | Paste|  ,   |  .   |   +  |   -  |   /  |   *  |  Shift/Entr    |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | GUI  |  Alt |SHIFT/UP|LOWER/Down|Spac   | RAISE/W|AltG/Ç|Vol-| Vol+ | Play |
+ * | Ctrl | GUI  |  Alt |W     |LOWER/Ç |SHIFT/Space  | RAISE/Left|AltG/Up|Down| Right | Bksp|
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
     ___, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,   KC_F6, KC_F7, KC_F8,   KC_F9,   KC_F10, KC_F11,   
      ___,   LSFT(BP_DQOT), LSFT(BP_LGIL),  LSFT(BP_RGIL),   LSFT(BP_LPRN), LSFT(BP_RPRN),  LSFT(BP_AT),   LSFT(BP_PLUS), LSFT(BP_MINUS), LSFT(BP_SLASH),    LSFT(BP_ASTR) ,     KC_F12,
      ___,   BP_PC_UNDO,   BP_PC_CUT,   BP_PC_COPY,   BP_PC_PASTE,   BP_COMMA  ,   BP_DOT,   BP_PLUS, BP_MINUS, BP_SLASH,  BP_ASTR,      ___,
-    ___, ___, ___, ___, ___,       ___,   ___,     ___,    ___,    KC_VOLD, KC_VOLU, KC_MPLY
+    ___, ___, ___, ___, ___,       ___,   ___,     ___,    ___,    ___, ___, ___
 ),
 
 /* Raise déplacer le pavé del et ajouter les flèches
@@ -96,14 +96,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * |------+------+------+------+------+------|------+------+------+------+------+------|
   * |Shift |      |  {   |   }  |      |      |  Del |  End | Pg Dn|  Left|  Down| Right|
   * |------+------+------+------+------+------+------+------+------+------+------+------|
-  * | Ctrl | GUI  |  Alt |SHIFT/UP|LOWER/Down| _     | RAISE/W|AltG/Ç|Vol-|Vol+|Play |
+  * | Ctrl | GUI  |  Alt |SHIFT/UP|LOWER/Down| SHIFT/Space | RAISE/W|AltG/Ç|Vol-|Vol+|Play |
   * `-----------------------------------------------------------------------------------'
   */
 [_RAISE] = LAYOUT_planck_grid(
     BP_HASH,BP_DQOT, BP_LGIL,       BP_RGIL,       BP_LPRN,       BP_RPRN,       BP_AT,          BP_PLUS, BP_MINUS, BP_SLASH,  BP_ASTR, BP_EQUAL,
     ___,     BP_DOLLAR, RALT(BP_LGIL), RALT(BP_RGIL), RALT(BP_LPRN), RALT(BP_RPRN),                 KC_INS, KC_HOME, KC_PGUP, XXX,    KC_UP,      BP_PERCENT,
     ___,     XXX,           RALT(BP_Y),    RALT(BP_X),  XXX,          XXX,               KC_DEL, KC_END, KC_PGDN,     KC_LEFT,  KC_DOWN, KC_RIGHT,
-    ___,     ___,           ___,           ___,           ___,       BP_UNDS, BP_UNDS,     ___,    ___,   KC_VOLD, KC_VOLU,  KC_MPLY
+    ___,     ___,           ___,           ___,           ___,       ___, ___,     ___,    ___,   KC_VOLD, KC_VOLU,  KC_MPLY
 ),
 
 /* Adjust (Lower + Raise)
