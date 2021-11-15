@@ -60,21 +60,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift|   À  |   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  | Shift/Entr |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | GUI  |  Alt |SHIFT/UP|LOWER/Down |Spac  | RAISE/W|AltG/Ç|Bksp|     |  Del  |
+ * | Ctrl | GUI  |  Alt |SHIFT/UP|LOWER/Down |Spac  | RAISE/W|AltG/Ç|Bksp| Left | Right|
  * `-----------------------------------------------------------------------------------'
  */
 [_BEPO] = LAYOUT_planck_grid(
     KC_TAB,  BP_B,       BP_E_ACUTE, BP_P,    BP_O,    BP_E_GRAVE, BP_DCRC,  BP_V,  BP_D,    BP_L, BP_J,    BP_Z,
     KC_ESC,  BP_A,       BP_U,       BP_I,    BP_E,    BP_COMMA,   BP_C,     BP_T,  BP_S,    BP_R, BP_N,    BP_M,
     KC_LSFT, BP_A_GRAVE, BP_Y,       BP_X,    BP_DOT,  BP_K,       BP_APOS,  BP_Q,  BP_G,    BP_H, BP_F,    SHIFTENTER,
-    KC_LCTL, KC_LGUI, KC_LALT,   SHIFTUP , LOWER,   KC_SPC,     KC_SPC, RAISE, ALTGR, KC_BSPC, XXX, KC_DEL
+    KC_LCTL, KC_LGUI, KC_LALT,   SHIFTUP , LOWER,   KC_SPC,     KC_SPC, RAISE, ALTGR, KC_BSPC, KC_LEFT, KC_RIGHT,
 ),
 
 /* Lower  
  * ,-----------------------------------------------------------------------------------.
  * | Tab  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F11 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |RigEsc|   1  |  2   |  3   |   4  |  5   |  6   |   7  |  8   |   9  |   0  |  F12 |
+ * |   Esc|   1  |  2   |  3   |   4  |  5   |  6   |   7  |  8   |   9  |   0  |  F12 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|  Undo|   Cut| Copy | Paste|  ,   |  .   |   +  |   -  |   /  |   *  |  Shift/Entr    |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * |  #   |   "  |  «   |  »   |  (   |   )  |   @  |   +  |   -  |   /  |   *  |   =  |
   * |------+------+------+------+------+-------------+------+------+------+------+------|
   * | Esc  |  $   |  <   |  >   |  [   |   ]  |  Ins |  Home| Pg Up|      |  Up  |  %   |
-  * |------+------+------+------+------+------|------+------+----  --+------+------+------|
+  * |------+------+------+------+------+------|------+------+------+------+------+------|
   * |Shift |      |  {   |   }  |      |      |  Del |  End | Pg Dn|  Left|  Down| Right|
   * |------+------+------+------+------+------+------+------+------+------+------+------|
   * | Ctrl | GUI  |  Alt |SHIFT/UP|LOWER/Down| _     | RAISE/W|AltG/Ç|Vol-|Vol+|Play |
