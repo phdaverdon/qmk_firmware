@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * | Tab  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F11 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |   Esc|   1  |  2   |  3   |   4  |  5   |  6   |   7  |  8   |   9  |   0  |  F12 |
+ * |   #  |   1  |  2   |  3   |   4  |  5   |  6   |   7  |  8   |   9  |   0  |  F12 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |  Shift/W||  Undo|   Cut| Copy | Paste|  ,   |  .   |   +  |   -  |   /  |   *  |  Shift/Ç    |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -83,16 +83,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_LOWER] = LAYOUT_planck_grid(
     ___, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,   KC_F6, KC_F7, KC_F8,   KC_F9,   KC_F10, KC_F11,   
-     ___,   LSFT(BP_DQOT), LSFT(BP_LGIL),  LSFT(BP_RGIL),   LSFT(BP_LPRN), LSFT(BP_RPRN),  LSFT(BP_AT),   LSFT(BP_PLUS), LSFT(BP_MINUS), LSFT(BP_SLASH),    LSFT(BP_ASTR) ,     KC_F12,
+     BP_HASH,   LSFT(BP_DQOT), LSFT(BP_LGIL),  LSFT(BP_RGIL),   LSFT(BP_LPRN), LSFT(BP_RPRN),  LSFT(BP_AT),   LSFT(BP_PLUS), LSFT(BP_MINUS), LSFT(BP_SLASH),    LSFT(BP_ASTR) ,     KC_F12,
      ___,   BP_PC_UNDO,   BP_PC_CUT,   BP_PC_COPY,   BP_PC_PASTE,   BP_COMMA  ,   BP_DOT,   BP_PLUS, BP_MINUS, BP_SLASH,  BP_ASTR,      ___,
     ___, ___, ___, ___, ___,       ___,   ___,     ___,    ___,    ___, ___, ___
 ),
 
 /* Raise déplacer le pavé del et ajouter les flèches
   * ,-----------------------------------------------------------------------------------.
-  * |  #   |   "  |  «   |  »   |  (   |   )  |   @  |   +  |   -  |   /  |   *  |   =  |
+  * |  $   |   "  |  «   |  »   |  (   |   )  |   @  |   +  |   -  |   /  |   *  |   =  |
   * |------+------+------+------+------+-------------+------+------+------+------+------|
-  * | Esc  |  $   |  <   |  >   |  [   |   ]  |  Ins |  Home| Pg Up|      |      |  %   |
+  * | Esc  |      |  <   |  >   |  [   |   ]  |  Ins |  Home| Pg Up|      |      |  %   |
   * |------+------+------+------+------+------|------+------+------+------+------+------|
   * | Shift/W| |      |  {   |   }  |      |      |  Del |  End | Pg Dn|      |      |      |
   * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -100,8 +100,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * `-----------------------------------------------------------------------------------'
   */
 [_RAISE] = LAYOUT_planck_grid(
-    BP_HASH,BP_DQOT, BP_LGIL,       BP_RGIL,       BP_LPRN,       BP_RPRN,       BP_AT,          BP_PLUS, BP_MINUS, BP_SLASH,  BP_ASTR, BP_EQUAL,
-    ___,     BP_DOLLAR, RALT(BP_LGIL), RALT(BP_RGIL), RALT(BP_LPRN), RALT(BP_RPRN),                 KC_INS, KC_HOME, KC_PGUP, XXX,    XXX,      BP_PERCENT,
+    BP_DOLLAR,BP_DQOT, BP_LGIL,       BP_RGIL,       BP_LPRN,       BP_RPRN,       BP_AT,          BP_PLUS, BP_MINUS, BP_SLASH,  BP_ASTR, BP_EQUAL,
+    ___,    XXX , RALT(BP_LGIL), RALT(BP_RGIL), RALT(BP_LPRN), RALT(BP_RPRN),                 KC_INS, KC_HOME, KC_PGUP, XXX,    XXX,      BP_PERCENT,
     ___,     XXX,           RALT(BP_Y),    RALT(BP_X),  XXX,          XXX,               KC_DEL, KC_END, KC_PGDN,     XXX,  XXX, XXX,
     ___,     ___,           ___,           ___,           ___,       ___, ___,     ___,    ___,   KC_VOLD, KC_VOLU,  KC_MPLY
 ),
