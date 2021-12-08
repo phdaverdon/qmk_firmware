@@ -1,6 +1,6 @@
 [
   {
-    "name": "BÉPO PHD v15",
+    "name": "BÉPO PHD v16",
     "author": "PHD"
   },
   [
@@ -9,15 +9,21 @@
     },
     "\n<i class='kb kb-Tab-1'></i>\n$",
     {
-      "t": "#000000\n\n#ed1313\n#2b81cf"
+      "t": "#31ad7d\n#000000\n#ed1313\n#2b81cf"
     },
-    "\nB\n\"\nF1",
-    "\nÉ\n«\nF2",
-    "\nP\n»\nF3",
+    "|\nB\n\"\nF1",
     {
-      "t": "\n\n#ed1313\n#2b81cf"
+      "t": "#000000\n#000000\n#ed1313\n#2b81cf"
     },
-    "\nO\n(\nF4",
+    "\nÉ\n«\nF2",
+    {
+      "t": "#31ad7d\n#000000\n#ed1313\n#2b81cf"
+    },
+    "&\nP\n»\nF3",
+    {
+      "t": "#31ad7d\n#140000\n#ed1313\n#2b81cf"
+    },
+    "œ\nO\n(\nF4",
     {
       "t": "#000000\n\n#ed1313\n#2b81cf"
     },
@@ -39,48 +45,49 @@
     },
     "\nEsc\n\n#",
     {
+      "t": "#31ad7d\n#000000\n\n#2b81cf",
       "f": 3
     },
-    "\nA\n\n1",
+    "æ\nA\n\n1",
+    {
+      "t": "#31ad7d\n#000000\n#ed1313\n#2b81cf",
+      "f": 3
+    },
+    "ù\nU\n<\n2",
     {
       "t": "#000000\n\n#ed1313\n#2b81cf",
       "f": 3
     },
-    "\nU\n<\n2",
-    {
-      "f": 3
-    },
     "\nI\n>\n3",
     {
+      "t": "#31ad7d\n#000000\n#ed1313\n#2b81cf",
       "f": 3,
       "n": true
     },
-    "\nE\n[\n4",
+    "€\nE\n[\n4",
     {
+      "t": "#31ad7d\n#000000\n#ed1313\n#2b81cf\n\n\n#000000",
       "f": 3
     },
-    "\n,\n]\n5\n\n\n;",
+    "'\n,\n]\n5\n\n\n;",
     {
-      "f": 3
+      "t": "#000000\n\n#ed1313\n#2b81cf",
+      "fa": [
+        0,
+        0,
+        2
+      ]
     },
     "\nC\nIns\n6",
     {
-      "f": 3,
       "n": true
     },
     "\nT\nHome\n7",
-    {
-      "f": 3
-    },
     "\nS\nPgUp\n8",
     {
-      "t": "#000000\n\n\n#2b81cf",
-      "f": 3
+      "t": "#000000\n\n\n#2b81cf"
     },
     "\nR\n\n9",
-    {
-      "f": 3
-    },
     "\nN\n\n0",
     {
       "t": "#000000\n\n#ed1313\n#2b81cf",
@@ -90,45 +97,28 @@
   ],
   [
     {
-      "t": "#000000",
-      "f": 3
+      "t": "#000000"
     },
     "\nShift/W",
     {
-      "t": "#000000\n\n\n#2b81cf",
-      "f": 3
+      "t": "#31ad7d\n#000000\n\n#2b81cf"
     },
-    "\nÀ\n\n<i class=\"fa fa-undo\"></i>",
+    "\\\nÀ\n\n<i class=\"fa fa-undo\"></i>",
+    "{\nY\n\n<i class=\"fa fa-cut\"></i>",
+    "}\nX\n\n<i class=\"fa fa-copy\"></i>",
     {
-      "t": "#000000\n\n#ed1313\n#2b81cf",
-      "f": 3
+      "t": "#31ad7d\n#000000\n\n#2b81cf\n\n\n#000000"
     },
-    "\nY\n{\n<i class=\"fa fa-cut\"></i>",
+    "…\n.\n\n<i class=\"fa fa-paste\"></i>\n\n\n:",
     {
-      "f": 3
+      "t": "#31ad7d\n#000000\n\n#2b81cf"
     },
-    "\nX\n}\n<i class=\"fa fa-copy\"></i>",
+    "~\nK\n\n,",
     {
-      "t": "#000000\n\n\n#2b81cf",
-      "f": 3
-    },
-    "\n.\n\n<i class=\"fa fa-paste\"></i>\n\n\n:",
-    {
-      "f": 3
-    },
-    "\nK\n\n,",
-    {
-      "t": "#000000\n\n#ed1313\n#2b81cf",
-      "f": 3
+      "t": "#000000\n\n#ed1313\n#2b81cf"
     },
     "\n’\nDel\n.\n\n\n?",
-    {
-      "f": 3
-    },
     "\nQ\nEnd\n+",
-    {
-      "f": 3
-    },
     "\nG\nPgDwn\n-",
     {
       "fa": [
@@ -140,7 +130,11 @@
     },
     "\nH\n<i class=\"fa fa-step-backward\"></i>\n/",
     {
-      "f": 3
+      "fa": [
+        0,
+        0,
+        2
+      ]
     },
     "\nF\n<i class=\"fa fa-step-forward\"></i>\n*",
     {
@@ -161,24 +155,39 @@
     "&dArr; / <i class='mss mss-Return-5'></i>",
     {
       "c": "#cccccc",
+      "t": "#31ad7d",
+      "a": 4,
       "f": 3,
       "w": 2
     },
-    "",
+    "_",
     {
       "c": "#ed1313",
+      "t": "#000000",
+      "a": 7,
       "f": 4
     },
     "&uArr; / <i class='kb kb-Unicode-BackSpace-DeleteLeft-Big'></i>",
     {
       "c": "#cccccc",
+      "t": "#000000\n#000000\n\n\n#31ad7d",
       "a": 4,
-      "f": 2
+      "f": 3,
+      "fa": [
+        0,
+        2,
+        0,
+        2
+      ]
     },
-    "\nAtlGr/←",
+    "\nAtlGr\n\n/←\n------------",
     {
       "t": "#000000\n\n#ed1313",
-      "f": 3
+      "fa": [
+        0,
+        0,
+        2
+      ]
     },
     "\n↓\nVol-",
     "\n↑\nVol+",
