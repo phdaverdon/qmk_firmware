@@ -43,6 +43,8 @@ enum planck_keycodes {
 #define ALTGR   MT(MOD_RALT,KC_LEFT)
 #define SHIFTC   MT(MOD_RSFT,BP_CCED)
 #define SHIFTW   MT(MOD_LSFT,BP_W)
+#define SHIFTTAB   MT(MOD_LSFT,KC_TAB)
+#define ALTESC   MT(MOD_LALT,KC_ESC)
 
 
 #define BP_PC_UNDO LCTL(BP_Z)
@@ -54,35 +56,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* BÉPO
  * ,-----------------------------------------------------------------------------------.
- * | Tab  |   B  |   É  |   P  |   O  |   È  |   ^  |   V  |   D  |   L  |   J  |   Z  |
+ * | Ç  |   B  |   É  |   P  |   O  |   È  |   ^  |   V  |   D  |   L  |   J  |   Z  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |Esc   |   A  |   U  |   I  |   E  |   ,  |   C  |   T  |   S  |   R  |   N  |   M  |
+ * | W   |   A  |   U  |   I  |   E  |   ,  |   C  |   T  |   S  |   R  |   N  |   M  |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * | Shift/W|   À  |   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  | Shift/Ç |
+ * | Shift|   À  |   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  | Shift|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | GUI  |  Alt |Shift |LOWER/Entr | Space  | RAISE/Bksp|AltG/Left|Down| Up |Right|
+ * | Ctrl | GUI |Alt/Esc|Shift/Tab|LOWER/Entr | Space  | RAISE/Bksp|AltG/Left|Down| Up |Right|
  * `-----------------------------------------------------------------------------------'
  */
 [_BEPO] = LAYOUT_planck_grid(
-    KC_TAB,  BP_B,       BP_E_ACUTE, BP_P,    BP_O,    BP_E_GRAVE, BP_DCRC,  BP_V,  BP_D,    BP_L, BP_J,    BP_Z,
-    KC_ESC,  BP_A,       BP_U,       BP_I,    BP_E,    BP_COMMA,   BP_C,     BP_T,  BP_S,    BP_R, BP_N,    BP_M,
-    SHIFTW, BP_A_GRAVE, BP_Y,       BP_X,    BP_DOT,  BP_K,       BP_APOS,  BP_Q,  BP_G,    BP_H, BP_F,    SHIFTC,
-    KC_LCTL, KC_LGUI, KC_LALT,   KC_LSFT , LOWER,   KC_SPC,     KC_SPC, RAISE, ALTGR, KC_DOWN, KC_UP, KC_RIGHT 
+    BP_CCED,  BP_B,       BP_E_ACUTE, BP_P,    BP_O,    BP_E_GRAVE, BP_DCRC,  BP_V,  BP_D,    BP_L, BP_J,    BP_Z,
+    BP_W,  BP_A,       BP_U,       BP_I,    BP_E,    BP_COMMA,   BP_C,     BP_T,  BP_S,    BP_R, BP_N,    BP_M,
+    KC_LSFT, BP_A_GRAVE, BP_Y,       BP_X,    BP_DOT,  BP_K,       BP_APOS,  BP_Q,  BP_G,    BP_H, BP_F,    KC_RSFT,
+    KC_LCTL, KC_LGUI, ALTESC,   SHIFTTAB , LOWER,   KC_SPC,     KC_SPC, RAISE, ALTGR, KC_DOWN, KC_UP, KC_RIGHT 
 ),
 
 /* Lower  
  * ,-----------------------------------------------------------------------------------.
- * | Tab  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F11 |
+ * |      |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F11 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |   #  |   1  |  2   |  3   |   4  |  5   |  6   |   7  |  8   |   9  |   0  |  F12 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |  Shift/W||  Undo|   Cut| Copy | Paste|  ,   |  .   |   +  |   -  |   /  |   *  |  Shift/Ç    |
+ * |  Shift||  Undo|   Cut| Copy | Paste|  ,   |  .   |   +  |   -  |   /  |   *  |  Shift    |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl | GUI  |  Alt |Shift |LOWER/Entr| Space  | RAISE/Bksp|AltG/Left|Down| Up |Right|
+ * | Ctrl | GUI  |Alt/Esc|Shift/Tab|LOWER/Entr| Space  | RAISE/Bksp|AltG/Left|Down| Up |Right|
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
-    ___, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,   KC_F6, KC_F7, KC_F8,   KC_F9,   KC_F10, KC_F11,   
+    XXX, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,   KC_F6, KC_F7, KC_F8,   KC_F9,   KC_F10, KC_F11,   
      BP_HASH,   LSFT(BP_DQOT), LSFT(BP_LGIL),  LSFT(BP_RGIL),   LSFT(BP_LPRN), LSFT(BP_RPRN),  LSFT(BP_AT),   LSFT(BP_PLUS), LSFT(BP_MINUS), LSFT(BP_SLASH),    LSFT(BP_ASTR) ,     KC_F12,
      ___,   BP_PC_UNDO,   BP_PC_CUT,   BP_PC_COPY,   BP_PC_PASTE,   BP_COMMA  ,   BP_DOT,   BP_PLUS, BP_MINUS, BP_SLASH,  BP_ASTR,      ___,
     ___, ___, ___, ___, ___,       ___,   ___,     ___,    ___,    ___, ___, ___
@@ -92,16 +94,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * ,-----------------------------------------------------------------------------------.
   * |  $   |   "  |  «   |  »   |  (   |   )  |   @  |   +  |   -  |   /  |   *  |   =  |
   * |------+------+------+------+------+-------------+------+------+------+------+------|
-  * | Esc  |      |  <   |  >   |  [   |   ]  |  Ins |  Home| Pg Up|      |      |  %   |
+  * |      |      |  <   |  >   |  [   |   ]  |  Ins |  Home| Pg Up|      |      |  %   |
   * |------+------+------+------+------+------|------+------+------+------+------+------|
-  * | Shift/W| |      |      |      |      |      |  Del |  End | Pg Dn|Track-|Track+|      |
+  * | Shift| |      |      |      |      |      |  Del |  End | Pg Dn|Track-|Track+|      |
   * |------+------+------+------+------+------+------+------+------+------+------+------|
   * | Ctrl | GUI  |  Alt |Shift |LOWER/Entr| Space  | RAISE/Bksp|AltG/Left|Vol-|Vol+|Play |
   * `-----------------------------------------------------------------------------------'
   */
 [_RAISE] = LAYOUT_planck_grid(
     BP_DOLLAR,BP_DQOT, BP_LGIL,       BP_RGIL,       BP_LPRN,       BP_RPRN,       BP_AT,          BP_PLUS, BP_MINUS, BP_SLASH,  BP_ASTR, BP_EQUAL,
-    ___,    XXX , RALT(BP_LGIL), RALT(BP_RGIL), RALT(BP_LPRN), RALT(BP_RPRN),                 KC_INS, KC_HOME, KC_PGUP, XXX,    XXX,      BP_PERCENT,
+    XXX,    XXX , RALT(BP_LGIL), RALT(BP_RGIL), RALT(BP_LPRN), RALT(BP_RPRN),                 KC_INS, KC_HOME, KC_PGUP, XXX,    XXX,      BP_PERCENT,
     ___,     XXX,           XXX,    XXX,  XXX,          XXX,               KC_DEL, KC_END, KC_PGDN,     KC_MPRV,  KC_MNXT , XXX,
     ___,     ___,           ___,           ___,           ___,       ___, ___,     ___,    ___,   KC_VOLD, KC_VOLU,  KC_MPLY
 ),
