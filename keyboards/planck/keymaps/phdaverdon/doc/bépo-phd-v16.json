@@ -13,9 +13,9 @@
     },
     "|\nB\n\"\nF1",
     {
-      "t": "#000000\n#000000\n#ed1313\n#2b81cf"
+      "t": "#31ad7d\n\n#ed1313\n#2b81cf"
     },
-    "\nÉ\n«\nF2",
+    "<span class='cd'>&#9676;&#769;</span>\nÉ\n«\nF2",
     {
       "t": "#31ad7d\n#000000\n#ed1313\n#2b81cf"
     },
@@ -25,17 +25,30 @@
     },
     "œ\nO\n(\nF4",
     {
-      "t": "#000000\n\n#ed1313\n#2b81cf"
+      "t": "#31ad7d\n\n#ed1313\n#2b81cf"
     },
-    "\nÈ\n)\nF5",
-    "\n<span class='cd'>&#9676;&#770;</span>\n@\nF6\n\n\n!",
-    "\nV\n+\nF7",
-    "\nD\n-\nF8",
-    "\nL\n/\nF9",
-    "\nJ\n*\nF10",
+    "<span class='cd'>&#9676;&#768;</span>\nÈ\n)\nF5",
     {
+      "t": "#000000\n\n#ed1313\n#2b81cf",
       "f2": 4
     },
+    "\n<span class='cd'>&#9676;&#770;</span>\n@\nF6\n\n\n!",
+    {
+      "f": 3
+    },
+    "\nV\n+\nF7",
+    {
+      "f": 3
+    },
+    "\nD\n-\nF8",
+    {
+      "f": 3
+    },
+    "\nL\n/\nF9",
+    {
+      "f": 3
+    },
+    "\nJ\n*\nF10",
     "\nZ\n=\nF11"
   ],
   [
@@ -55,10 +68,10 @@
     },
     "ù\nU\n<\n2",
     {
-      "t": "#000000\n\n#ed1313\n#2b81cf",
+      "t": "#31ad7d\n\n#ed1313\n#2b81cf",
       "f": 3
     },
-    "\nI\n>\n3",
+    "<span class='cd'>&#9676;&#776;</span>\nI\n>\n3",
     {
       "t": "#31ad7d\n#000000\n#ed1313\n#2b81cf",
       "f": 3,
@@ -115,10 +128,17 @@
     },
     "~\nK\n\n,",
     {
-      "t": "#000000\n\n#ed1313\n#2b81cf"
+      "t": "#000000\n\n#ed1313\n#2b81cf",
+      "f": 3
     },
     "\n’\nDel\n.\n\n\n?",
+    {
+      "f": 3
+    },
     "\nQ\nEnd\n+",
+    {
+      "f": 3
+    },
     "\nG\nPgDwn\n-",
     {
       "fa": [
@@ -170,7 +190,7 @@
     "&uArr; / <i class='kb kb-Unicode-BackSpace-DeleteLeft-Big'></i>",
     {
       "c": "#cccccc",
-      "t": "#000000\n#000000\n\n\n#31ad7d",
+      "t": "#000000\n\n\n\n#31ad7d",
       "a": 4,
       "f": 3,
       "fa": [
