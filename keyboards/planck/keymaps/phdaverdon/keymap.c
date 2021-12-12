@@ -98,14 +98,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * |------+------+------+------+------+------|------+------+------+------+------+------|
   * | Shift| |      |      |      |      |      |  Del |  End | Pg Dn|Track-|Track+|      |
   * |------+------+------+------+------+------+------+------+------+------+------+------|
-  * | Ctrl | GUI  |  Alt |Shift |LOWER/Entr| Space  | RAISE/Bksp|AltG/Left|Vol-|Vol+|Play |
+  * | Ctrl | GUI  |  Alt |Shift |LOWER/Entr| Space  | RAISE/Bksp|Mute teams|Vol-|Vol+|Play |
   * `-----------------------------------------------------------------------------------'
   */
 [_RAISE] = LAYOUT_planck_grid(
     BP_DOLLAR,BP_DQOT, BP_LGIL,       BP_RGIL,       BP_LPRN,       BP_RPRN,       BP_AT,          BP_PLUS, BP_MINUS, BP_SLASH,  BP_ASTR, BP_EQUAL,
     XXX,    XXX , RALT(BP_LGIL), RALT(BP_RGIL), RALT(BP_LPRN), RALT(BP_RPRN),                 KC_INS, KC_HOME, KC_PGUP, XXX,    LSFT(BP_EQUAL),      BP_PERCENT,
     ___,     XXX,           XXX,    XXX,  XXX,          XXX,               KC_DEL, KC_END, KC_PGDN,     KC_MPRV,  KC_MNXT , XXX,
-    ___,     ___,           ___,           ___,           ___,       ___, ___,     ___,    ___,   KC_VOLD, KC_VOLU,  KC_MPLY
+    ___,     ___,           ___,           ___,           ___,       ___, ___,     ___,     LCTL(LSFT(BP_M)),   KC_VOLD, KC_VOLU,  KC_MPLY
 ),
 
 /* Adjust (Lower + Raise)
