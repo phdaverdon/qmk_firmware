@@ -69,11 +69,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BEPO] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-     BP_CCED,  BP_B, BP_E_ACUTE, BP_P,    BP_O, BP_E_GRAVE,                     BP_DCRC,  BP_V,  BP_D,    BP_L, BP_J,    BP_Z,
+     BP_CCED,  BP_B, BP_EACU, BP_P,    BP_O, BP_EGRV,                     BP_DCIR,  BP_V,  BP_D,    BP_L, BP_J,    BP_Z,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     BP_W,  BP_A,       BP_U,      BP_I,   BP_E,  BP_COMMA,                     BP_C,     BP_T,  BP_S,    BP_R, BP_N,    BP_M,
+     BP_W,  BP_A,       BP_U,      BP_I,   BP_E,  BP_COMM,                     BP_C,     BP_T,  BP_S,    BP_R, BP_N,    BP_M,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     KC_LSFT, BP_A_GRAVE, BP_Y,     BP_X,    BP_DOT,  BP_K,                     BP_APOS,  BP_Q,  BP_G,    BP_H, BP_F,    KC_RSFT,
+     KC_LSFT, BP_AGRV, BP_Y,     BP_X,    BP_DOT,  BP_K,                     BP_QUOT,  BP_Q,  BP_G,    BP_H, BP_F,    KC_RSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                          KC_LGUI, LOWER, CTRLSPACE,    ALTGR, RAISE, ALTESC
                                       //`--------------------------'  `--------------------------'
@@ -96,9 +96,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
      XXX, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                    KC_F6, KC_F7, KC_F8,   KC_F9,   KC_F10, KC_F11, 
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     BP_HASH,LSFT(BP_DQOT),LSFT(BP_LGIL),LSFT(BP_RGIL),LSFT(BP_LPRN),LSFT(BP_RPRN),    LSFT(BP_AT),LSFT(BP_PLUS),LSFT(BP_MINUS),LSFT(BP_SLASH),LSFT(BP_ASTR),KC_F12,
+     BP_HASH,   BP_1, BP_2,  BP_3,   BP_4, BP_5,                                BP_6,   BP_7, BP_8, BP_9,    BP_0,KC_F12,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     ___,BP_PC_UNDO,BP_PC_CUT,BP_PC_COPY,BP_PC_PASTE,BP_COMMA,                  BP_DOT, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT , ___,
+     ___,BP_PC_UNDO,BP_PC_CUT,BP_PC_COPY,BP_PC_PASTE,BP_COMM,                  BP_DOT, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT , ___,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           ___, ___, ___,                ___, ___, ___
                                       //`--------------------------'  `--------------------------'
@@ -118,9 +118,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_RAISE] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-     BP_DOLLAR,BP_DQOT, BP_LGIL, BP_RGIL, BP_LPRN, BP_RPRN,                      BP_AT,   BP_PLUS,BP_MINUS,BP_SLASH, BP_ASTR,BP_EQUAL,
+     BP_DLR,BP_DQUO,  BP_LDAQ,  BP_RDAQ, BP_LPRN, BP_RPRN,                      BP_AT,   BP_PLUS,BP_MINS,BP_SLSH, BP_ASTR,BP_EQL,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     XXX,XXX ,RALT(BP_LGIL),RALT(BP_RGIL), RALT(BP_LPRN), RALT(BP_RPRN),         KC_INS,KC_HOME,KC_PGUP,XXX,LSFT(BP_EQUAL),BP_PERCENT,
+     XXX,XXX ,RALT(BP_LDAQ),RALT(BP_RDAQ), RALT(BP_LPRN), RALT(BP_RPRN),         KC_INS,KC_HOME,KC_PGUP,XXX,LSFT(BP_EQL),BP_PERC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      ___, XXX, XXX,   LCTL(LSFT(BP_M)),   KC_VOLD, KC_VOLU,                      KC_DEL, KC_END, KC_PGDN, KC_MPRV,  KC_MNXT , KC_MPLY,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
