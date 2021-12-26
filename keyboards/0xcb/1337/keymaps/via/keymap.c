@@ -76,7 +76,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 #endif
 
 /* oled stuff :) */
-#ifdef OLED_DRIVER_ENABLE
+#ifdef OLED_ENABLE
 uint16_t startup_timer;
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
@@ -132,7 +132,7 @@ static void render_info(void) {
     oled_write_P(led_state.caps_lock ? PSTR("CAP ") : PSTR("    "), false);
     oled_write_ln_P(led_state.scroll_lock ? PSTR("SCR ") : PSTR("    "), false);
 }
-static void render_rgbled_status(bool) {
+static void render_rgbled_status(void) {
     char string[4];
     if (RGBLIGHT_MODES > 1 && rgblight_is_enabled() && get_highest_layer(layer_state) == _RGB) {
         uint16_t m = rgblight_get_mode();
@@ -168,7 +168,7 @@ static void render_rgbled_status(bool) {
         oled_write_ln_P(PSTR("\n"), false);
     }
 }
-void oled_task_user(void) {
+bool oled_task_user(void) {
     static bool finished_timer = false;
     if (!finished_timer && (timer_elapsed(startup_timer) < 1000)) {
         render_logo();
@@ -178,8 +178,9 @@ void oled_task_user(void) {
             finished_timer = true;
         }
         render_info();
-        render_rgbled_status(true);
+        render_rgbled_status();
         render_logo_font();
     }
+    return false;
 }
 #endif
