@@ -35,9 +35,9 @@ enum crkbd_layers {
 
 #define _MEH    MEH_T(KC_UP)
 #define _HYP    ALL_T(BP_W)
-#define LOWER   LT(_LOWER,KC_TAB)
+#define LOWER   LT(_LOWER,KC_ENTER)
 #define RAISE   LT(_RAISE, KC_BSPC)
-#define ALTGR   MT(MOD_RALT,KC_ENTER)
+#define ALTGR   MT(MOD_RALT,KC_TAB)
 #define SHIFTC   MT(MOD_RSFT,BP_CCED)
 #define SHIFTW   MT(MOD_LSFT,BP_W)
 #define SHIFTTAB   MT(MOD_LSFT,KC_TAB)
@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift|   À  |   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  | Shift|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- *            | GUI | LOWER/Tab  |Ctrl/Space |  AltG/Entr| RAISE/Bksp|Alt/Esc|                 
+ *            | GUI | LOWER/Entr  |Ctrl/Space |  AltG/Tab| RAISE/Bksp|Alt/Esc|                 
  * `-----------------------------------------------------------------------------------'
  */
 
@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |  Shift|  Undo|   Cut| Copy | Paste|  ,   |  .   | Left|Down| Up |Right| Shift    |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- *            | GUI | LOWER/Tab  |Ctrl/Space |  AltG/Entr| RAISE/Bksp|Alt/Esc|
+ *            | GUI | LOWER/Entr  |Ctrl/Space |  AltG/Tab| RAISE/Bksp|Alt/Esc|
  * `-----------------------------------------------------------------------------------'
  */
 
@@ -113,7 +113,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * |------+------+------+------+------+------|------+------+------+------+------+------|
   * | Shift|      |      |Mute teams|Vol-|Vol+|  Del |  End | Pg Dn|Track-|Track+| Play |
   * |------+------+------+------+------+------+------+------+------+------+------+------|
-  *           | GUI | LOWER/Tab  |Ctrl/Space |  AltG/Entr| RAISE/Bksp|Alt/Esc|
+  *           | GUI | LOWER/Entr  |Ctrl/Space |  AltG/Tab| RAISE/Bksp|Alt/Esc|
   * `-----------------------------------------------------------------------------------'
   */
 
