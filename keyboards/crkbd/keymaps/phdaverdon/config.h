@@ -24,3 +24,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MASTER_LEFT
 // #define MASTER_RIGHT
 // #define EE_HANDS
+#undef RGBLIGHT_ENABLE
+#undef ENABLE_RGB_MATRIX_RAINDROPS
+#define RGB_MATRIX_KEYPRESSES
