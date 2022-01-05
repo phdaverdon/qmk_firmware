@@ -35,9 +35,9 @@ enum crkbd_layers {
 
 #define _MEH    MEH_T(KC_UP)
 #define _HYP    ALL_T(BP_W)
-#define LOWER   LT(_LOWER,KC_ENTER)
+#define LOWER   LT(_LOWER,KC_TAB)
 #define RAISE   LT(_RAISE, KC_BSPC)
-#define ALTGR   MT(MOD_RALT,KC_TAB)
+#define ALTGR   MT(MOD_RALT,KC_ENTER)
 #define SHIFTC   MT(MOD_RSFT,BP_CCED)
 #define SHIFTW   MT(MOD_LSFT,BP_W)
 #define SHIFTTAB   MT(MOD_LSFT,KC_TAB)
@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift|   À  |   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  | Shift|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- *            | GUI | LOWER/Entr  |Ctrl/Space |  AltG/Tab| RAISE/Bksp|Alt/Esc|                 
+ *            | GUI | LOWER/Tab  |Ctrl/Space |  AltG/Entr| RAISE/Bksp|Alt/Esc|                 
  * `-----------------------------------------------------------------------------------'
  */
 
@@ -87,9 +87,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |   #  |   1  |  2   |  3   |   4  |  5   |  6   |   7  |  8   |   9  |   0  |  F12 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |  Shift|  Undo|   Cut| Copy | Paste|  ,   |  .  |      |      |      |      |Shift |
+ * | Shift|  Undo|   Cut| Copy | Paste|Entr  |      |   .  |   ,  |      |      |Shift |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- *            | GUI | LOWER/Entr  |Ctrl/Space |  AltG/Tab| RAISE/Bksp|Alt/Esc|
+ *            | GUI | LOWER/Tab  |Ctrl/Space |  AltG/Entr| RAISE/Bksp|Alt/Esc|
  * `-----------------------------------------------------------------------------------'
  */
 
@@ -99,7 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      BP_HASH,   BP_1, BP_2,  BP_3,   BP_4, BP_5,                                BP_6,   BP_7, BP_8, BP_9,    BP_0,KC_F12,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     ___,BP_PC_UNDO,BP_PC_CUT,BP_PC_COPY,BP_PC_PASTE,BP_COMM,                   BP_DOT,  XXX,  XXX,  XXX,  XXX, ___,
+     ___,BP_PC_UNDO,BP_PC_CUT,BP_PC_COPY,BP_PC_PASTE,KC_ENTER,                  XXX,  BP_DOT,  BP_COMM,  XXX,  XXX, ___,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           ___, ___, ___,                ___, ___, ___
                                       //`--------------------------'  `--------------------------'
@@ -113,7 +113,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * |------+------+------+------+------+------|------+------+------+------+------+------|
   * | Shift|Track-|Track+|Play  |Vol-  |Vol+  |  Del |  End | Pg Dn|Left  |Down  |Right |
   * |------+------+------+------+------+------+------+------+------+------+------+------|
-  *           | GUI | LOWER/Entr  |Ctrl/Space |  AltG/Tab| RAISE/Bksp|Alt/Esc|
+  *           | GUI | LOWER/Tab  |Ctrl/Space |  AltG/Entr| RAISE/Bksp|Alt/Esc|
   * `-----------------------------------------------------------------------------------'
   */
 
