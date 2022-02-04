@@ -26,4 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define EE_HANDS
 #undef RGBLIGHT_ENABLE
 #undef ENABLE_RGB_MATRIX_RAINDROPS
+#undef ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
+#undef ENABLE_RGB_MATRIX_JELLYBEAN_RAINDROPS
 #define RGB_MATRIX_KEYPRESSES

@@ -33,14 +33,11 @@ enum crkbd_layers {
 #define ___     KC_TRANSPARENT
 #define XXX     KC_NO
 
-#define _MEH    MEH_T(KC_UP)
-#define _HYP    ALL_T(BP_W)
 #define LOWER   LT(_LOWER,KC_TAB)
 #define RAISE   LT(_RAISE, KC_BSPC)
 #define ALTGR   MT(MOD_RALT,KC_ENTER)
-#define SHIFTC   MT(MOD_RSFT,BP_CCED)
-#define SHIFTW   MT(MOD_LSFT,BP_W)
 #define SHIFTTAB   MT(MOD_LSFT,KC_TAB)
+#define SHIFTBSPC   MT(MOD_RSFT,KC_BSPC)
 #define CTRLSPACE   MT(MOD_LCTL,KC_SPC)
 #define ALTESC   MT(MOD_LALT,KC_ESC)
 
@@ -62,9 +59,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |  Ç  |   A  |   U  |   I  |   E  |   ,  |   C  |   T  |   S  |   R  |   N  |   M  |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * | Shift|   À  |   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  | Shift|
+ * |Shift/Tab| À|   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  |Shift/Bksp|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- *            | GUI | LOWER/Tab  |Ctrl/Space |  AltG/Entr| RAISE/Bksp|Alt/Esc|                 
+ *            | GUI | LOWER  |Ctrl/Space |  AltG/Entr| RAISE|Alt/Esc|                 
  * `-----------------------------------------------------------------------------------'
  */
 
@@ -74,9 +71,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      BP_CCED,  BP_A,       BP_U,      BP_I,   BP_E,  BP_COMM,                     BP_C,     BP_T,  BP_S,    BP_R, BP_N,    BP_M,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     KC_LSFT, BP_AGRV, BP_Y,     BP_X,    BP_DOT,  BP_K,                     BP_QUOT,  BP_Q,  BP_G,    BP_H, BP_F,    KC_RSFT,
+     SHIFTTAB, BP_AGRV, BP_Y,     BP_X,    BP_DOT,  BP_K,                     BP_QUOT,  BP_Q,  BP_G,    BP_H, BP_F,    SHIFTBSPC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         KC_LGUI, LOWER, CTRLSPACE,    ALTGR, RAISE, ALTESC
+                                         KC_LGUI, MO(_LOWER), CTRLSPACE,    ALTGR, MO(_RAISE), ALTESC
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -87,9 +84,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |   #  |   1  |  2   |  3   |   4  |  5   |  6   |   7  |  8   |   9  |   0  |  F12 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|  Undo|   Cut| Copy | Paste|Entr  |      |   .  |   ,  |      |      |Shift |
+ * |      |  Undo|   Cut| Copy | Paste|Entr  |      |   .  |   ,  |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- *            | GUI | LOWER/Tab  |Ctrl/Space |  AltG/Entr| RAISE/Bksp|Alt/Esc|
+ *            | GUI | LOWER  |Ctrl/Space |  AltG/Entr| RAISE|Alt/Esc|
  * `-----------------------------------------------------------------------------------'
  */
 
@@ -99,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      BP_HASH,   BP_1, BP_2,  BP_3,   BP_4, BP_5,                                BP_6,   BP_7, BP_8, BP_9,    BP_0,KC_F12,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     ___,BP_PC_UNDO,BP_PC_CUT,BP_PC_COPY,BP_PC_PASTE,KC_ENTER,                  XXX,  BP_DOT,  BP_COMM,  XXX,  XXX, ___,
+     XXX,BP_PC_UNDO,BP_PC_CUT,BP_PC_COPY,BP_PC_PASTE,KC_ENTER,                  XXX,  BP_DOT,  BP_COMM,  XXX,  XXX, XXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           ___, ___, ___,                ___, ___, ___
                                       //`--------------------------'  `--------------------------'
@@ -111,9 +108,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * |------+------+------+------+------+-------------+------+------+------+------+------|
   * |  °   |      |  <   |  >   |  [   |   ]  |  Ins |  Home| Pg Up|      |  Up  |  %   |
   * |------+------+------+------+------+------|------+------+------+------+------+------|
-  * | Shift|Track-|Track+|Play  |Vol-  |Vol+  |  Del |  End | Pg Dn|Left  |Down  |Right |
+  * |      |Track-|Track+|Play  |Vol-  |Vol+  |  Del |  End | Pg Dn|Left  |Down  |Right |
   * |------+------+------+------+------+------+------+------+------+------+------+------|
-  *           | GUI | LOWER/Tab  |Ctrl/Space |  AltG/Entr| RAISE/Bksp|Alt/Esc|
+  *           | GUI | LOWER  |Ctrl/Space |  AltG/Entr| RAISE|Alt/Esc|
   * `-----------------------------------------------------------------------------------'
   */
 
@@ -123,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      LSFT(BP_EQL),XXX ,RALT(BP_LDAQ),RALT(BP_RDAQ), RALT(BP_LPRN), RALT(BP_RPRN),         KC_INS,KC_HOME,KC_PGUP,XXX, KC_UP,BP_PERC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     ___, KC_MPRV,  KC_MNXT , KC_MPLY,   KC_VOLD, KC_VOLU,                      KC_DEL, KC_END, KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, 
+     XXX, KC_MPRV,  KC_MNXT , KC_MPLY,   KC_VOLD, KC_VOLU,                      KC_DEL, KC_END, KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, 
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           ___, ___, ___,                ___, ___, ___
                                       //`--------------------------'  `--------------------------'
