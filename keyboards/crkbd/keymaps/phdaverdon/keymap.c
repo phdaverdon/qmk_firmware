@@ -35,11 +35,12 @@ enum crkbd_layers {
 
 #define LOWER   LT(_LOWER,KC_TAB)
 #define RAISE   LT(_RAISE, KC_BSPC)
-#define ALTGR   MT(MOD_RALT,KC_ENTER)
-#define SHIFTTAB   MT(MOD_LSFT,KC_TAB)
-#define SHIFTBSPC   MT(MOD_RSFT,KC_BSPC)
-#define CTRLSPACE   MT(MOD_LCTL,KC_SPC)
-#define ALTESC   MT(MOD_LALT,KC_ESC)
+#define ALTGR_ENTER   MT(MOD_RALT,KC_ENTER)
+#define SHIFT_TAB   MT(MOD_LSFT,KC_TAB)
+#define SHIFT_BSPC   MT(MOD_RSFT,KC_BSPC)
+#define GUI_SPACE   MT(MOD_LGUI,KC_SPC)
+#define ALT_ESC   MT(MOD_LALT,KC_ESC)
+#define CTRL_W   MT(MOD_LCTL,BP_W)
 
 
 #define BP_PC_UNDO LCTL(BP_Z)
@@ -48,6 +49,17 @@ enum crkbd_layers {
 #define BP_PC_PASTE LCTL(BP_V)
 
 
+// Left-hand home row mods
+#define GUI_A LGUI_T(BP_A)
+#define ALT_U LALT_T(BP_U)
+#define SFT_I LSFT_T(BP_I)
+#define CTRL_E LCTL_T(BP_E)
+
+// Right-hand home row mods
+#define CTRL_T RCTL_T(BP_T)
+#define SFT_S RSFT_T(BP_S)
+#define ALT_R LALT_T(BP_R)
+#define GUI_N RGUI_T(BP_N)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -61,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |Shift/Tab| À|   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  |Shift/Bksp|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- *            | GUI | LOWER  |Ctrl/Space |  AltG/Entr| RAISE|Alt/Esc|                 
+ *            | Ctrl/W | LOWER  |Space/GUI |  AltG/Entr| RAISE|Alt/Esc|                 
  * `-----------------------------------------------------------------------------------'
  */
 
@@ -69,11 +81,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
      BP_W,  BP_B, BP_EACU, BP_P,    BP_O, BP_EGRV,                     BP_DCIR,  BP_V,  BP_D,    BP_L, BP_J,    BP_Z,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     BP_CCED,  BP_A,       BP_U,      BP_I,   BP_E,  BP_COMM,                     BP_C,     BP_T,  BP_S,    BP_R, BP_N,    BP_M,
+     BP_CCED,  GUI_A,       ALT_U,      SFT_I,   CTRL_E,  BP_COMM,                     BP_C,     CTRL_T,  SFT_S,    ALT_R, GUI_N,    BP_M,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     SHIFTTAB, BP_AGRV, BP_Y,     BP_X,    BP_DOT,  BP_K,                     BP_QUOT,  BP_Q,  BP_G,    BP_H, BP_F,    SHIFTBSPC,
+     SHIFT_TAB, BP_AGRV, BP_Y,     BP_X,    BP_DOT,  BP_K,                     BP_QUOT,  BP_Q,  BP_G,    BP_H, BP_F,    SHIFT_BSPC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         KC_LGUI, MO(_LOWER), CTRLSPACE,    ALTGR, MO(_RAISE), ALTESC
+                                         CTRL_W, MO(_LOWER), GUI_SPACE,    ALTGR_ENTER, MO(_RAISE), ALT_ESC
                                       //`--------------------------'  `--------------------------'
   ),
 
