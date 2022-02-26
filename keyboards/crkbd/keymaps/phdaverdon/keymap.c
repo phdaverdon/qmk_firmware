@@ -34,7 +34,7 @@ enum crkbd_layers {
 #define XXX     KC_NO
 
 #define LOWER   LT(_LOWER,KC_TAB)
-#define RAISE   LT(_RAISE, KC_BSPC)
+#define RAISE_W   LT(_RAISE, BP_W)
 #define ALTGR_ENTER   MT(MOD_RALT,KC_ENTER)
 #define SHIFT_TAB   MT(MOD_LSFT,KC_TAB)
 #define SHIFT_BSPC   MT(MOD_RSFT,KC_BSPC)
@@ -67,48 +67,48 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* BÉPO
  * ,-----------------------------------------------------------------------------------.
- * | W  |   B  |   É  |   P  |   O  |   È  |   ^  |   V  |   D  |   L  |   J  |   Z  |
+ * | Esc  |   B  |   É  |   P  |   O  |   È  |   ^  |   V  |   D  |   L  |   J  |   Z  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |  Ç  |   A  |   U  |   I  |   E  |   ,  |   C  |   T  |   S  |   R  |   N  |   M  |
+ * | Tab  |Win/A |Alt/U |Shift/I|Ctrl/E|  ,  |   C  |Ctrl/T|Shift/S|Alt/R|Win/N |   M  |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |Shift/Tab| À|   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  |Shift/Bksp|
+ * |  Ê   | À    |   Y  |   X  |   .  |   K  |   ’  |   Q  |   G  |   H  |   F  |  Bksp|
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- *            | Ctrl/W | LOWER  |Space/GUI |  AltG/Entr| RAISE|Alt/Esc|                 
+ *                  | Shift | LOWER  | Space |  AltG/Entr| RAISE/W| Ç |                 
  * `-----------------------------------------------------------------------------------'
  */
 
   [_BEPO] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-     BP_W,  BP_B, BP_EACU, BP_P,    BP_O, BP_EGRV,                     BP_DCIR,  BP_V,  BP_D,    BP_L, BP_J,    BP_Z,
+     KC_ESC,  BP_B, BP_EACU, BP_P,    BP_O, BP_EGRV,                     BP_DCIR,  BP_V,  BP_D,    BP_L, BP_J,    BP_Z,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     BP_CCED,  GUI_A,       ALT_U,      SFT_I,   CTRL_E,  BP_COMM,                     BP_C,     CTRL_T,  SFT_S,    ALT_R, GUI_N,    BP_M,
+     KC_TAB,  GUI_A,       ALT_U,      SFT_I,   CTRL_E,  BP_COMM,                     BP_C,     CTRL_T,  SFT_S,    ALT_R, GUI_N,    BP_M,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     SHIFT_TAB, BP_AGRV, BP_Y,     BP_X,    BP_DOT,  BP_K,                     BP_QUOT,  BP_Q,  BP_G,    BP_H, BP_F,    SHIFT_BSPC,
+     BP_ECIR, BP_AGRV, BP_Y,     BP_X,    BP_DOT,  BP_K,                     BP_QUOT,  BP_Q,  BP_G,    BP_H, BP_F,    KC_BSPC,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         CTRL_W, MO(_LOWER), GUI_SPACE,    ALTGR_ENTER, MO(_RAISE), ALT_ESC
+                                         KC_LSFT, MO(_LOWER), KC_SPC,    ALTGR_ENTER, RAISE_W, BP_CCED
                                       //`--------------------------'  `--------------------------'
   ),
 
 
 /* Lower  
  * ,-----------------------------------------------------------------------------------.
- * |      |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F11 |
+ * |  F12 |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F11 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |   #  |   1  |  2   |  3   |   4  |  5   |  6   |   7  |  8   |   9  |   0  |  F12 |
+ * |   #  |   1  |  2   |  3   |   4  |  5   |  6   |   7  |  8   |   9  |   0  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |  Undo|   Cut| Copy | Paste|Entr  |      |   .  |   ,  |      |      |      |
+ * |      |  Undo|   Cut| Copy | Paste|Entr  |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- *            | GUI | LOWER  |Ctrl/Space |  AltG/Entr| RAISE|Alt/Esc|
+ *            | Shift | LOWER  | Space |  AltG/Entr| RAISE/W| Ç |
  * `-----------------------------------------------------------------------------------'
  */
 
   [_LOWER] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-     XXX, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                    KC_F6, KC_F7, KC_F8,   KC_F9,   KC_F10, KC_F11, 
+     KC_F12, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                                    KC_F6, KC_F7, KC_F8,   KC_F9,   KC_F10, KC_F11, 
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     BP_HASH,   BP_1, BP_2,  BP_3,   BP_4, BP_5,                                BP_6,   BP_7, BP_8, BP_9,    BP_0,KC_F12,
+     BP_HASH,   BP_1, BP_2,  BP_3,   BP_4, BP_5,                                BP_6,   BP_7, BP_8, BP_9,    BP_0,XXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     XXX,BP_PC_UNDO,BP_PC_CUT,BP_PC_COPY,BP_PC_PASTE,KC_ENTER,                  XXX,  BP_DOT,  BP_COMM,  XXX,  XXX, XXX,
+     XXX,BP_PC_UNDO,BP_PC_CUT,BP_PC_COPY,BP_PC_PASTE,KC_ENTER,                  XXX,  XXX,  XXX,  XXX,  XXX, XXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           ___, ___, ___,                ___, ___, ___
                                       //`--------------------------'  `--------------------------'
@@ -122,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * |------+------+------+------+------+------|------+------+------+------+------+------|
   * |      |Track-|Track+|Play  |Vol-  |Vol+  |  Del |  End | Pg Dn|Left  |Down  |Right |
   * |------+------+------+------+------+------+------+------+------+------+------+------|
-  *           | GUI | LOWER  |Ctrl/Space |  AltG/Entr| RAISE|Alt/Esc|
+  *           | Shift | LOWER  | Space |  AltG/Entr| RAISE/W| Ç |
   * `-----------------------------------------------------------------------------------'
   */
 
